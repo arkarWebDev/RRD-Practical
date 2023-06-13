@@ -1,12 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Main from "./layouts/Main";
-import { Products, ProductDetails, Home, About } from "./pages/index";
+import { Posts, PostDetails, Home, About, Error } from "./pages/index";
+import { loader as postsLoader } from "./pages/Posts";
+import { loader as postDetailsLoader } from "./pages/PostDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -18,11 +21,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <Products />,
+        element: <Posts />,
+        loader: postsLoader,
       },
       {
-        path: "/product/:title",
-        element: <ProductDetails />,
+        path: "/product/:postID",
+        element: <PostDetails />,
+        loader: postDetailsLoader,
       },
     ],
   },

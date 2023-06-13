@@ -22,8 +22,8 @@ a.active {
 nav {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
+  padding: 20px;
 }
 
 button {
@@ -41,7 +41,7 @@ div {
 }
 
 .card {
-  width: 40%;
+  width: 60%;
   margin: auto;
   background-color: cornflowerblue;
   color: #fff;
@@ -55,7 +55,7 @@ div {
   text-align: left;
 }
 
-.title {
-  font-size: 19px;
+.userName {
+  font-size: 18px;
   font-weight: 800;
 }
